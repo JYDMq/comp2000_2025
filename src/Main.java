@@ -28,15 +28,15 @@ public class Main extends JFrame {
       this.setContentPane(canvas);
       this.pack();
       this.setVisible(true);
-      int width = getWidth();
-      int height = getHeight();
+      //int width = getWidth();
+     // int height = getHeight();
 
-      int start=0;
+      //int start=0;
 
-      for (int i=1; i <=20; i = i++){
-        start= i*(width/10);
-        this.drawLine(start, 0, start, height);
-      }
+     // for (int i=1; i <=20; i = i++){
+     //   start= i*(width/10);
+      //  this.drawLine(start, 0, start, height);
+    //  }
     }
 
     public void run() {
