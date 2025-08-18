@@ -4,7 +4,7 @@ public class Grid {
 
     Cell[][]cells = new Cell [20][20]; 
 
-    public grid(){ 
+    public Grid(){ 
 
         int offset = 10+35;
 
@@ -18,7 +18,7 @@ public class Grid {
 
     public void paint(Graphics g){
          for (int i =0; i < cells.length; i++){
-          for (int j= 0; a < cells[i].length; j++){
+          for (int j= 0; j < cells[i].length; j++){
             cells [i][j].paint(g);
         }
     }
