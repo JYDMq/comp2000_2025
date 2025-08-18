@@ -7,47 +7,27 @@ import javax.swing.JPanel;
 
 
 public class Main extends JFrame {
-    public static void main(String[] args) throws Exception {
-      Main window = new Main();
-      window.run();
-    }
-
-        public class Cell {
-      int h =20;
-      int w= 20;
-      int l =35;
-      int gridOffset =0;
-
-    }
-
-    public class Grid {
-      Cell cell = new Cell();{
-      Paint paint= new Paint();
-      for(int i = 0; i < cell.h; i++){
-         for (int a= 0; a < cell.w; a++){
-          int x = (i * cell.l) + cell.gridOffset;
-          int y = (a * cell.l) + cell.gridOffset;
-          int o =cell.l;
-        }
-      }
-     }
-    }
-
-
 
     class Canvas extends JPanel {
+
+      Grid grid ;
+
+
       public Canvas() {
         setPreferredSize(new Dimension(720, 720));
+        grid = new Grid();
       }
 
       @Override
-
       public void paint(Graphics g) {
-    	g.setColor(java.awt.Color.BLUE);
-      g.drawRect(grid.x, grid.y, grid.o, grid.o);
-        
+      grid.paint(g);
   }
       }
+
+     public static void main(String[] args) throws Exception {
+      Main window = new Main();
+      window.run();
+    }
     
 
     private Main() {
