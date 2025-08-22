@@ -2,14 +2,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
 
-public class Cell {
+public class Cell extends java.awt.Rectangle {
   // fields
-  int x;
-  int y;
   static int size = 35;
 
   // constructors
   public Cell(int inX, int inY) {
+    super(inY, inY, size, size);
     x = inX;
     y = inY;
   }
