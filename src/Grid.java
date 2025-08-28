@@ -21,4 +21,8 @@ public class Grid {
       }
     }
   }
+
+  public Cell CellAtRow(int c, int r){
+    return cells[c][r];
+  }
 }
