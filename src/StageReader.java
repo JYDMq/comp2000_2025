@@ -12,7 +12,7 @@ public class StageReader {
     }
     
     catch(Exception a){
-      System.out.println("something is wrong");
+      System.out.println("something is wrong unfortunate");
     }
     return new Stage();
   }
