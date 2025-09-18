@@ -8,13 +8,37 @@ import java.util.Optional;
 public class Stage {
   Grid grid;
   List<Actor> actors;
+  List<Item> items;
+  
 
+
+  int num3 = (int)(Math.random()*21);
+  int i =0;
+  
+ 
   public Stage() {
+
     grid = new Grid();
     actors = new ArrayList<Actor>();
-    actors.add(new Cat(grid.cellAtColRow(0, 0).get()));
-    actors.add(new Dog(grid.cellAtColRow(0, 15).get()));
-    actors.add(new Bird(grid.cellAtColRow(12, 9).get()));    
+    while (i <=1){
+      int num1 = (int)(Math.random()*21);
+      int num2 = (int)(Math.random()*21);
+      if (num1 == num2){
+        num1 = (int)(Math.random()*21);
+      }
+      if (i ==0){
+      actors.add(new Cat(grid.cellAtColRow(num1, num1).get()));
+      }
+      else{
+      actors.add(new Dog(grid.cellAtColRow(num2, num3).get()));
+      actors.add(new Bird(grid.cellAtColRow(num3, num2).get()));
+      }
+      i++;
+
+
+
+    }
+     
   }
 
   public void paint(Graphics g, Point mouseLoc) {
