@@ -20,6 +20,7 @@ public class Stage {
 
     grid = new Grid();
     actors = new ArrayList<Actor>();
+    actors.add(new Cat(grid.cellAtColRow(num1, num1).get()));
     while (i <=1){
       int num1 = (int)(Math.random()*21);
       int num2 = (int)(Math.random()*21);
@@ -27,17 +28,38 @@ public class Stage {
         num1 = (int)(Math.random()*21);
       }
       if (i ==0){
-      actors.add(new Cat(grid.cellAtColRow(num1, num1).get()));
+       actors. //use an array instead 
       }
       else{
       actors.add(new Dog(grid.cellAtColRow(num2, num3).get()));
       actors.add(new Bird(grid.cellAtColRow(num3, num2).get()));
+      }
+
+      int num3 = (int)(Math.random()*21);
+      int num4 = (int)(Math.random()*21);
+
+      if (num3 == num1 || num3 == num2 && num3 == num1 || num3 == num2){
+        num3 = (int)(Math.random()*21);
+        num4 = (int)(Math.random()*21);
+
+      }
+      else {
+        if (i ==0){
+          items.add(new Seed (grid.cellAtColRow(num3,num4).get()));
+        }
+        else{
+         actors.add(new Dog(grid.cellAtColRow(num2, num3).get()));
+         actors.add(new Bird(grid.cellAtColRow(num3, num2).get()));
+      }
+
       }
       i++;
 
 
 
     }
+
+
      
   }
 
