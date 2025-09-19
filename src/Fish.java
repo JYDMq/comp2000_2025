@@ -2,11 +2,12 @@ import java.awt.Color;
 import java.awt.Polygon;
 import java.util.ArrayList;
 
-public class Bone extends Item {
-  public Bone(Cell inLoc) {
+public class Fish extends Item {
+  public Fish (Cell inLoc) {
     loc = inLoc;
     colour = Color.BLUE;
     display = new ArrayList<Polygon>();
-    Polygon main = new Polygon();
+    Polygon body = new Polygon();
+    display.add(body);
   }
 }

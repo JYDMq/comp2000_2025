@@ -16,11 +16,7 @@ public class Cell extends Rectangle {
 
   public void paint(Graphics g, Point mousePos) {
     if(contains(mousePos)) {
-      g.setColor(Color.GRAY);
-    }
-    else if (x <= 7 && y <= 7){
-      g.setColor(Color.BLUE);
-    
+      g.setColor(Color.GRAY);  
     } else {
       g.setColor(Color.WHITE);
     }

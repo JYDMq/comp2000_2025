@@ -5,8 +5,13 @@ import java.util.ArrayList;
 public class Bone extends Item {
   public Bone(Cell inLoc) {
     loc = inLoc;
-    colour = Color.YELLOW;
+    colour = Color.BLACK;
     display = new ArrayList<Polygon>();
-    Polygon main = new Polygon();
+    Polygon body = new Polygon();
+    body.addPoint(loc.x + 15, loc.y + 10);
+    body.addPoint(loc.x + 20, loc.y + 10);
+    body.addPoint(loc.x + 20, loc.y + 25);
+    body.addPoint(loc.x + 15, loc.y + 25);
+    display.add(body);
   }
 }
