@@ -40,8 +40,9 @@ public class Stage {
       actors.add(new Bird(grid.cellAtColRow(num3, num1).get()));
       items.add(new Bone (grid.cellAtColRow(num3,num4).get()));
       items.add(new Seed(grid.cellAtColRow(num1, num3).get()));
+      items.add(new Fish(grid.cellAtColRow(num4, num2).get()));
 
-      actors.get(0).loc.x = 9;
+     
    
   }
 
