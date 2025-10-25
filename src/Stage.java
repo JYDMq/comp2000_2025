@@ -8,6 +8,7 @@ import java.util.Optional;
 public class Stage {
   Grid grid;
   List<Actor> listOfPlayers;
+  List<Item> listOfItems; 
   List<Cell> cellOverlay;
   Optional<Actor> playerInAction;
 
@@ -17,10 +18,15 @@ public class Stage {
   public Stage() {
     grid = new Grid();
     listOfPlayers = new ArrayList<Actor>();
+    listOfItems = new ArrayList<Item>();
     cellOverlay = new ArrayList<Cell>();
     playerInAction = Optional.empty();
     currentState = new ChoosingActor();
     beat = new AnimationBeat();
+  }
+
+  public void addItem(Item item) {
+    listOfItems.add(item);
   }
 
   public void addPlayer(Actor player) {
@@ -40,6 +46,10 @@ public class Stage {
     beat.ticktock();
     for(Actor player: listOfPlayers) {
       player.paint(g);
+    }
+
+    for(Item item: listOfItems) {
+      item.paint(g);
     }
     draw_sidepanel(g, mouseLoc);
   }
@@ -88,6 +98,9 @@ public class Stage {
     List<Cell> init = grid.getRadius(from, size);
     for(Actor player: listOfPlayers) {
       init.remove(player.loc);
+    }
+    for(Item item: listOfItems) {
+      init.remove(item.loc);
     }
     return init;
   }

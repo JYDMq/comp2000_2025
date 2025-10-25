@@ -74,6 +74,11 @@ public class StageReader {
       stage.addPlayer(new Cat(stage.grid.cellAtColRow(0, 0).get(), false));
       stage.addPlayer(new Dog(stage.grid.cellAtColRow(0, 15).get(), true));
       stage.addPlayer(new Bird(stage.grid.cellAtColRow(12, 9).get(), true));
+      stage.addItem(new Fish(stage.grid.cellAtColRow(5, 5).get()));
+      stage.addItem(new Bone(stage.grid.cellAtColRow(15, 15).get()));
+      stage.addItem(new Seed(stage.grid.cellAtColRow(10, 10).get()));
+        
+      
     }
     return stage;
   }
