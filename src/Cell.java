@@ -7,6 +7,7 @@ public class Cell extends Rectangle {
   static int size = 35;
   char col;
   int row;
+  Client client;
 
   public Cell(char inCol, int inRow, int x, int y) {
     super(x, y, size, size);
@@ -18,7 +19,7 @@ public class Cell extends Rectangle {
     if(contains(mousePos)) {
       g.setColor(Color.GRAY);
     } else {
-      g.setColor(Color.WHITE);
+      g.setColor(Color.YELLOW);
     }
     g.fillRect(x, y, size, size);
     g.setColor(Color.BLACK);
