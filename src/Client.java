@@ -6,10 +6,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import static java.util.stream.Collectors.toList;
-//import java.util.ArrayList;
-//import java.util.Iterator;
-import java.util.List;
+
+
 
 public class Client {
 
@@ -24,13 +22,9 @@ public class Client {
                 .thenApply(HttpResponse::body)
                 .thenAccept(inputStream -> {
                     try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
-
-                        List <String> line =
-                           reader.lines()
-                           .filter(reader.readLine() -> reader.readLine().contains("Windy") )
-                           .collect(toList());
-                       System.out.println("Received: " + line); 
-
+                        String line= reader.readLine()
+                        .filter((line -> line.contains("Windy")))
+                        .forEach(System.out::println);
 
     
                        //  while ((line = reader.readLine()) != null) {
