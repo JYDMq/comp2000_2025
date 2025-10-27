@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Label;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,11 +86,12 @@ public class Stage {
       g.drawString(a.getClass().getName(), margin, yLoc);
       g.drawString("location:", labelIndent, yLoc+vTab);
       g.drawString(Character.toString(a.loc.col) + Integer.toString(a.loc.row), valueIndent, yLoc+vTab);
-      g.drawString("player type:", labelIndent, yLoc+2*vTab);
-      g.drawString(a.isBot() ? "Bot" : "Human", valueIndent, yLoc+2*vTab);
+      g.drawString("altitude", labelIndent, yLoc+2*vTab);
+      g.drawString("player type:", labelIndent, yLoc+3*vTab);
+      g.drawString(a.isBot() ? "Bot" : "Human", valueIndent, yLoc+3*vTab);
       if(a.isBot() && a.mover != null) {
-        g.drawString("mover:", labelIndent, yLoc+3*vTab);
-        g.drawString(a.mover.getClass().getName(), valueIndent, yLoc+3*vTab);
+        g.drawString("mover:", labelIndent, yLoc+4*vTab);
+        g.drawString(a.mover.getClass().getName(), valueIndent, yLoc+4*vTab);
       }
     }    
   }

@@ -1,6 +1,9 @@
 # Welcome to COMP2000 - Object Oriented Programming Practices
 ## Session 2, 2025
 
+State pattern
+
+
 Please ensure that you follow the weekly updates in this repository
 
 You are free to clone this repository into your own hosted git environment, such as Github, Bitbucket, or Gitlab.
