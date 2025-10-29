@@ -4,9 +4,24 @@ import java.awt.Polygon;
 import java.util.List;
 
 public abstract class Item{
-    Color colour;
+    Color baseColor,colour;
     Cell loc;
     List<Polygon> display;
+    int moves;
+    int turns;
+    MoveStrategy mover;
+
+
+    protected Item(Cell inLoc, Color Incolor, int inMoves ){
+      loc = inLoc;
+      colour= Incolor;
+      baseColor = Incolor;
+      moves =inMoves;
+      turns = 1;
+      setPoly();
+
+    }
+    protected abstract void setPoly();
 
     public void paint(Graphics g) {
      for(Polygon p: display) {
@@ -23,8 +38,10 @@ public abstract class Item{
     float[] hsbValues = new float[3];
     Color.RGBtoHSB(baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue(), hsbValues);
     hsbValues[1] = ((float) percentage) / 100.0f;
-    color = Color.getHSBColor(hsbValues[0], hsbValues[1], hsbValues[2]);
+    colour = Color.getHSBColor(hsbValues[0], hsbValues[1], hsbValues[2]);
   }
+
+  //it would be nice of it to be deleted when the player click on it
 
 
 }

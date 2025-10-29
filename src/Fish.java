@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 public class Fish extends Item {
   public Fish (Cell inLoc) {
-    loc = inLoc;
-    colour = Color.BLUE;
+    super(inLoc, Color.blue, 0);
+  }
+
+
+    protected void setPoly(){
     display = new ArrayList<Polygon>();
     // this part of the program deal with drawing the body opf the fish
     Polygon body = new Polygon();

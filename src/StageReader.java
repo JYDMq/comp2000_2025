@@ -11,6 +11,7 @@ public class StageReader {
     char col;
     int row;
     String actor;
+    String item;
 
     try {
       // read all lines from file into list
@@ -42,6 +43,7 @@ public class StageReader {
           }
           row = Integer.parseInt(line.substring(1, idx));
           actor = line.substring(idx+1, line.length());
+          item = line.substring(idx+1, line.length());
           if(actor.endsWith(suffix)) {
             isBot = true;
             actor = actor.substring(0, actor.length()-suffix.length());
@@ -66,6 +68,17 @@ public class StageReader {
         } else {
           throw new FormatException(" actor '" + actor + "' unknown.");
         }
+
+        if(item.equalsIgnoreCase("Seed")){
+          stage.addItem(new Seed(stage.grid.cellAtColRow(col, row).get()));
+        } else if(item.equalsIgnoreCase("Bone")){
+          stage.addItem(new Bone(stage.grid.cellAtColRow(col, row).get()));
+        } else if(item.equalsIgnoreCase("Fish")){
+          stage.addItem(new Fish(stage.grid.cellAtColRow(col, row).get()));
+        } else {
+          throw new FormatException(" item '" + item + "' unknown.");
+        }
+        
       }
     } catch (IOException | FormatException e) {
       // if any error occurs, create a blank stage and add actors in default locations

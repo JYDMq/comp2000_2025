@@ -3,9 +3,13 @@ import java.awt.Polygon;
 import java.util.ArrayList;
 
 public class Seed extends Item {
+
   public Seed(Cell inLoc) {
-    loc = inLoc;
-    colour = Color.CYAN;
+    super(inLoc, Color.orange, 0);
+  }
+  
+
+  protected void setPoly() {
     display = new ArrayList<Polygon>();
     Polygon circle = new Polygon();
     circle.addPoint(loc.x + 15, loc.y + 10);
@@ -14,4 +18,7 @@ public class Seed extends Item {
     circle.addPoint(loc.x + 10, loc.y + 15);
     display.add(circle);
   }
+
+
 }
+
