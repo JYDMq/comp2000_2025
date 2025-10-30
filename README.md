@@ -3,6 +3,7 @@
 
 State pattern
 
+The uage of State Pattern in this project has allow the program to run with ease due to the centerpoint of this project being a video game.
 
 Please ensure that you follow the weekly updates in this repository
 
