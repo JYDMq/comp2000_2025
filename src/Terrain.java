@@ -3,7 +3,7 @@ import java.awt.Color;
 import java.awt.Polygon;
 import java.util.List;
 
-public class Terrain {
+public class Terrain  {
   Color baseColor, color;
   Cell loc;
   List<Polygon> display;
