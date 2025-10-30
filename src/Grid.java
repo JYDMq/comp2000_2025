@@ -5,15 +5,17 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 import java.util.Set;
 
 public class Grid {
   Cell[][] cells = new Cell[20][20];
+  int i = (new Random()).nextInt(Cell.size);
   
   public Grid() {
     for(int i=0; i<cells.length; i++) {
       for(int j=0; j<cells[i].length; j++) {
-        cells[i][j] = new Cell(colToLabel(i), j, 10+Cell.size*i, 10+Cell.size*j);
+        cells[i][j] = new Cell(colToLabel(i), j, 10+Cell.size*i, 10+Cell.size*j, i);
       }
     }
   }

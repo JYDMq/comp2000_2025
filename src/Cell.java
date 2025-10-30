@@ -8,11 +8,13 @@ public class Cell extends Rectangle {
   char col;
   int row;
   Client client;
+  int altitude;
 
-  public Cell(char inCol, int inRow, int x, int y) {
+  public Cell(char inCol, int inRow, int x, int y, int alt) {
     super(x, y, size, size);
     col = inCol;
     row = inRow;
+    alt = altitude;
   }
 
   public void paint(Graphics g, Point mousePos) {

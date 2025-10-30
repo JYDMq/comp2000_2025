@@ -12,9 +12,11 @@ public class Stage {
   List<Item> listOfItems; 
   List<Cell> cellOverlay;
   Optional<Actor> playerInAction;
+  ScoreTracker score;
 
   GameState currentState;
   Beat beat;
+  
 
   public Stage() {
     grid = new Grid();
@@ -24,6 +26,7 @@ public class Stage {
     playerInAction = Optional.empty();
     currentState = new ChoosingActor();
     beat = new AnimationBeat();
+    
   }
 
   public void addItem(Item item) {
@@ -36,6 +39,10 @@ public class Stage {
       beat.punchIn(player);
     }
   }
+
+ 
+
+  
 
   public void paint(Graphics g, Point mouseLoc) {
     // do we have bot moves to make?
@@ -56,12 +63,14 @@ public class Stage {
   }
 
   private void draw_sidepanel(Graphics g, Point mouseLoc) {
+    
     // lots of magic numbers here
     // they are used to calculate the coordinates of where to draw on the information panel
     final int hTab = 10;
     final int blockVT = 35;
     final int margin = 21*blockVT;
     int yLoc = 20;
+    
 
     // state display
     g.setColor(Color.DARK_GRAY);
@@ -87,6 +96,7 @@ public class Stage {
       g.drawString("location:", labelIndent, yLoc+vTab);
       g.drawString(Character.toString(a.loc.col) + Integer.toString(a.loc.row), valueIndent, yLoc+vTab);
       g.drawString("altitude", labelIndent, yLoc+2*vTab);
+      g.drawString(Character.toString(a.loc.altitude), valueIndent, yLoc+2*vTab);
       g.drawString("player type:", labelIndent, yLoc+3*vTab);
       g.drawString(a.isBot() ? "Bot" : "Human", valueIndent, yLoc+3*vTab);
       if(a.isBot() && a.mover != null) {
