@@ -14,7 +14,7 @@ public class Client {
     public static void main (String[] args) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://13.238.167.130/weather"))
+                .uri(URI.create("http://13.238.167.130/rockyou"))
                 .header("Accept", "text/event-stream")
                 .build();
 
@@ -22,8 +22,8 @@ public class Client {
                 .thenApply(HttpResponse::body)
                 .thenAccept(inputStream -> {
                     try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
-                        String line= reader.readLine()
-                        .filter((line -> line.contains("Windy")))
+                        String line= reader.lines()
+                        //.filter((line -> line.contains("Windy")))
                         .forEach(System.out::println);
 
     
