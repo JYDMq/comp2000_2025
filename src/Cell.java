@@ -20,7 +20,7 @@ public class Cell extends Rectangle {
   public void paint(Graphics g, Point mousePos) {
     if(contains(mousePos)) {
       g.setColor(Color.GRAY);
-    } else {
+    } else if(Seasons.Autumn) {
       g.setColor(Color.GREEN);
     }
     g.fillRect(x, y, size, size);

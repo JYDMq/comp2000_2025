@@ -103,6 +103,7 @@ public class Stage {
         g.drawString("mover:", labelIndent, yLoc+4*vTab);
         g.drawString(a.mover.getClass().getName(), valueIndent, yLoc+4*vTab);
       g.drawString("Score", labelIndent, yLoc+5*vTab);
+      g.drawString(score.toString(), valueIndent, yLoc+5*vTab);
       }
     }    
   }

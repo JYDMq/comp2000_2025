@@ -22,8 +22,9 @@ public class Client {
                 .thenApply(HttpResponse::body)
                 .thenAccept(inputStream -> {
                     try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
-                        String line= reader.readLine()
-                        .filter((line -> line.contains("Windy")))
+                        String line;
+                        reader.lines()
+                        
                         .forEach(System.out::println);
 
     

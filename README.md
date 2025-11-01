@@ -5,6 +5,12 @@ State pattern
 
 The uage of State Pattern in this project has allow the program to run with ease due to the centerpoint of this project being a video game.
 
+For insance the Season file use state to determiede the season of each cell and thus switch accordingly
+
+for the usage of Lambda and Stream
+
+state- summer/autumn/winter/spring
+
 Please ensure that you follow the weekly updates in this repository
 
 You are free to clone this repository into your own hosted git environment, such as Github, Bitbucket, or Gitlab.
