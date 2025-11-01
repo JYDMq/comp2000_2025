@@ -1,21 +1,21 @@
 import java.awt.Color;
+import java.awt.Graphics;
 
+public class Seasons  {
 
-public class Seasons extends Cell {
+    SeasonState state;
 
-    Color colour;
+    public Seasons (){     
+        this.state = new Summer();
+        
+    }
 
-    State summer;
-    State autumn;
-    State winter;
-    State spring;
+    public void setState(SeasonState state){
+        this.state = state;
+    }
 
-    State state;
-    int timer = 0;
-
-    public Seasons (Color colour){
-        summer = new Summer(this);
-        this.colour = colour;
+    public void handleRequest(Graphics g){
+        state.handleRequest(g);
     }
 
     

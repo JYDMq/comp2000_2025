@@ -9,19 +9,22 @@ public class Cell extends Rectangle {
   int row;
   Client client;
   int altitude;
+  Seasons season;
 
   public Cell(char inCol, int inRow, int x, int y, int alt) {
     super(x, y, size, size);
     col = inCol;
     row = inRow;
     alt = altitude;
+    season = new Seasons();
+    season.setState(new Winter());
   }
 
   public void paint(Graphics g, Point mousePos) {
     if(contains(mousePos)) {
-      g.setColor(Color.GRAY);
-    } else if(Seasons.Autumn) {
-      g.setColor(Color.GREEN);
+      g.setColor(Color.BLACK);
+    } else  {
+      season.handleRequest(g);
     }
     g.fillRect(x, y, size, size);
     g.setColor(Color.BLACK);
