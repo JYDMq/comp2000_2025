@@ -22,10 +22,18 @@ public class Client {
                 .thenApply(HttpResponse::body)
                 .thenAccept(inputStream -> {
                     try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
-                        //String []line;
-                        reader.lines()
-                        //.toArray(size -> new String[]) 
-                        .forEach(System.out::println);
+                        //String []lines;
+                        //String line ="windy";
+                       // line = reader.readLine();
+                       // lines = line.split(" ");
+                       reader.lines()
+                       .limit(12)
+                       .filter(str -> str.contains("Windy"))
+                       .forEach(System.out::println);
+                       
+                       //.toArray(String::[new]) = lines;
+
+                        
 
     
                        //  while ((line = reader.readLine()) != null) {
@@ -39,7 +47,5 @@ public class Client {
                 .join(); // Wait for the async operation to complete
     }
 
-    public static String[] arrayLambda(BufferedReader reader){
-        return BufferedReader.toArray(size -> new String[size]);
-    }
+    
 }

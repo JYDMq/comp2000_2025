@@ -9,10 +9,8 @@ With the implementation of State Pattern, the season of each cell can easily cha
 
 For instance the Season file use state to determine the season of each cell and thus switch accordingly to a New Color for each Cell. This allows for frequent state changes for the Cell and make it run more efficiently without the usage of conditional Statement. The usage of State Pattern also allow the programmer to change the season into different State such as Monsoon season instead thus making it highly customisable for the client.
 
-For the usage of Lambda and Stream operation, this primary concern with BuffedReader which is an operation that interpret the raw data from the Website into usable data for the project
+For the usage of Lambda and Stream operation, this primary concern with BuffedReader which is an operation that interpret the raw data from the Website into usable data for the project. The raw data contains Attribute, X and Y coordinate and a value. This provide a weather update to the game and to change dynamically depending on the server. Through usage to Lambda, it allow the code to filter the data to usable string that parse onto Main to be display into the program.
 
-In this stream
+The Value of the Server represent a coordinate in the grid and shown as a place to warn about the condition of the area. For instance the X and y coordinate represent a place where the server reported the attributer of the weather. Thus it allows a more dynamic weather system that include the temperature and the altitude of the Cell.
 
-
-state- summer/autumn/winter/spring
 
